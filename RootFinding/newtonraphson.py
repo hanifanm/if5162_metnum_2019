@@ -8,7 +8,7 @@ num = [ 1, -3, -10 ]
 
 maxError = 0.000001
 
-xnow = 7
+xnow = 4
 
 #################################################################
 ##### ITERATION                                             #####
@@ -17,15 +17,16 @@ xnow = 7
 dnum = diffPolynomial(num)
 
 decimalPoint = '{0:.7f}'
-data = [[str(0), decimalPoint.format(xnow), '-']]
+data = [
+    [str(0), decimalPoint.format(xnow), '-']
+]
 spaces = 13
 
 def iterate(index):
     global xnow
 
     xnext = xnow - value(xnow, num) / value(xnow, dnum)
-    error = xnext - xnow
-    if(error < 0): error = -error
+    error = abs(xnext - xnow)
 
     xnow = xnext
     

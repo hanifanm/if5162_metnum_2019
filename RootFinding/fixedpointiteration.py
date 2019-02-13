@@ -23,8 +23,7 @@ def iterate(index):
     global xnow
 
     fnow = fraction(xnow, num, denum)
-    error = fnow - xnow
-    if(error < 0): error = -error
+    error = abs(fnow - xnow)
 
     xnow = fnow
     

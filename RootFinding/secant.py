@@ -28,8 +28,7 @@ def iterate(index):
     global x1, x2
 
     xnext = x2 - (x2 - x1) * value(x2, num) / (value(x2, num) - value(x1, num))
-    error = xnext - x2
-    if(error < 0): error = -error
+    error = abs(xnext - x2)
 
     x1 = x2
     x2 = xnext
